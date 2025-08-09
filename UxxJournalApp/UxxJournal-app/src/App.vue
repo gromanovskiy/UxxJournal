@@ -7,17 +7,7 @@ import AppShell from './components/AppShell.vue'
 const bodyText = ref('');
 const entries  = ref([]);
 
-// 1️⃣ make sure we’re logged in (magic-link prompt if not)
-async function ensureLogin () {
-  const { data: { session } } = await supabase.auth.getSession();
-  if (session) return;
 
-  const email = prompt('Enter your email for a magic-link login');
-  if (!email) return;
-  const { error } = await supabase.auth.signInWithOtp({ email });
-  if (error) alert(error.message);
-  else      alert('Check your email, click the link, then come back here.');
-}
 
 // 2️⃣ pull the 10 newest entries
 async function fetchEntries () {

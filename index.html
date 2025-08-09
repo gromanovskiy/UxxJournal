@@ -23,18 +23,7 @@
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6cXJxZXpyY3VjbndvdmltZmx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQzMzkyMDMsImV4cCI6MjA2OTkxNTIwM30.44XFy60EI-nGeseWGU2207mLXOeBau7me778XxmgDrk'
     );
 
-    // 2️⃣  quick sign-in (magic link email). For a personal tool,
-    //     you can have Supabase remember you in localStorage.
-    async function ensureLogin() {
-      // If user is already logged in, return immediately
-      const { data: { session } } = await supa.auth.getSession();
-      if (session) return;
-
-      const email = prompt('Enter email for magic-link login');
-      if (!email) throw new Error('Need an email to sign in');
-      const { error } = await supa.auth.signInWithOtp({ email });
-      alert('Check your email and click the link, then come back here.');
-    }
+   
 
     // 3️⃣  insert row when user clicks Save
     async function saveEntry() {

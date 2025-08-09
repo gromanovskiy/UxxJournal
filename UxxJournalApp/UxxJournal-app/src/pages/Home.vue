@@ -9,13 +9,13 @@ const entries  = ref([])
 // --- auth helper -----------------------------------------------------------
 async function ensureLogin () {
   const { data: { session } } = await supabase.auth.getSession()
-  if (session) return                        // already logged in
+  if (session) return // already logged in
 
-  const email = prompt('Enter your email for a magic-link login')
-  if (!email) return
-  const { error } = await supabase.auth.signInWithOtp({ email })
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin }
+  })
   if (error) alert(error.message)
-  else       alert('Check your email, click the link, then return here.')
 }
 
 // --- DB helpers ------------------------------------------------------------
