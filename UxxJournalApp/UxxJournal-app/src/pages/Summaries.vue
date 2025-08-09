@@ -1,0 +1,1 @@
+<template><h2>Summaries page stub</h2></template>
