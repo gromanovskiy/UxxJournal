@@ -21,7 +21,7 @@ onMounted(async () => {
 
 <template>
   <!-- dark navbar -->
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top border-bottom border-secondary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">UxxJournal</a>
 

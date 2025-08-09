@@ -50,7 +50,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <AppShell>
-    <RouterView />
-  </AppShell>
+  <AppShell />
+  <main class="container-fluid px-3 py-2">
+    <router-view />
+  </main>
 </template>
