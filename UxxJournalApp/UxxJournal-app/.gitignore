@@ -4,6 +4,10 @@ Thumbs.db
 .vscode/
 .idea/
 *.iml
+.history/
+.fleet/
+.direnv/
+.envrc
 
 # Dependencies
 node_modules/
@@ -27,13 +31,24 @@ temp/
 .stylelintcache
 *.tsbuildinfo
 
-# Framework outputs (only used if relevant)
+# Framework outputs (only if relevant)
 .next/
 .nuxt/
 .svelte-kit/
 storybook-static/
 playwright-report/
 test-results/
+.cypress-cache/
+
+# Test artifacts (if you use Cypress)
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# Deploy / Hosting metadata
+.vercel/
+.netlify/
+firebase-debug.log
 
 # Env & secrets
 .env
@@ -45,10 +60,15 @@ test-results/
 .env.production.local
 supabase/.env
 supabase/.secrets
-src/lib/supabaseClient.*
+# DO NOT ignore the client source file; make it read from env vars instead
+# (removed) src/lib/supabaseClient.*
 
-# Supabase local artifacts
+# Supabase local artifacts (safe to ignore)
 supabase/.temp/
 supabase/.branches/
 supabase/.db/
 supabase/.snapshots/
+
+# Optional keys/certs
+*.pem
+*.key
